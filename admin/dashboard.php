@@ -567,7 +567,100 @@
             </div>
 
 
-        
+            <!-- Modal for Updating Customer Information -->
+            <div class="modal fade" id="updatecustomer" aria-hidden="true" aria-labelledby="updatecustomerTitle" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content text-dark">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-info" id="updatecustomerTitle">Customer Information
+                            </h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="customerInfoFormUpdate" class="row gy-3 needs-validation pt-2" novalidate>
+                                <div class="my-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="searchUpdateCustomerID" name="customer_id" placeholder="Search Customer ID" required>
+                                        <button class="btn btn-outline-primary" type="button" id="searchButtonUpdate">Search</button>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <input class="form-control " type="text" placeholder="Username" required name="username" id="Updateusername">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <div class="password-toggle-updates">
+                                            <input id="Updatepassword" class="form-control " type="password" placeholder="Password" name="upassword">
+                                            <i class="bi bi-eye-slash fs-lg position-absolute password-toggle-btn" id="updatespass"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 my-1">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" id="Updatename" name="customer_name" placeholder="Fullname" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 my-1">
+                                    <div class="position-relative">
+                                        <input type="number" class="form-control" id="Updatephone" name="customer_phone" placeholder="Phone" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" id="Updateaddress" name="customer_address" placeholder="Address" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <input type="email" class="form-control" id="Updateemail" name="customer_email" placeholder="Email" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-1">
+                                    <div class="position-relative">
+                                        <select class="form-select" id="cstatus" name="customer_status" required>
+                                            <option selected disabled value="">Customer Status</option>
+                                            <option value="INACTIVE">INACTIVE</option>
+                                            <option value="ACTIVE">ACTIVE</option>
+                                            <option value="OUT OF SERVICE">OUT OF SERVICE</option>
+                                        </select>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="position-relative">
+                                        <button class="btn btn-primary w-100 me-auto" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Small modal for displaying messages -->
+            <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content notif">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-info fs-3" id="messageModalLabel">Notification</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body ">
+                            <div class="text-info fs-5" id="messageModalBody">
+
+                            </div>
+                            <!-- Message will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
