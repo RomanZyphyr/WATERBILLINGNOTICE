@@ -189,8 +189,28 @@ $conn->close();
                                 </div>
                             </form>
                         </div>
+                        
+                        <div class="tab-pane fade" id="inbox" role="tabpanel" aria-labelledby="inbox-tab">
+                            <h5 class="card-title">Inbox</h5>
+                            <div class="card mt-4">
+                                <div class="card-header">
+                                    New messages
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>Your monthly bills have arrived. Please check your bills and water consumption!</p>
+                                        <footer class="blockquote-footer"><cite title="Source Title">Administrator</cite></footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
 
-                      
+                        <div class="tab-pane fade" id="logout" role="tabpanel" aria-labelledby="logout-tab">
+                            <h5 class="card-title">Logout</h5>
+                            <p class="card-text">Are you sure you want to logout?</p>
+                            <button type="button" class="btn btn-danger" id="logoutYes">Yes</button>
+                            <button type="button" class="btn btn-dark">No</button>
+                        </div>
 
                     </div>
                 </div>
