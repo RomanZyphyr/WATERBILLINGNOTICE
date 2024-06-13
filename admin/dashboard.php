@@ -76,6 +76,53 @@
 
     </div>
 
+    <!-- Modal for Adding Administrator -->
+    <div class="modal fade" id="addingadmin" aria-hidden="true" aria-labelledby="addingadminTitle" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content text-dark ">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addingadminTitle">New Administrator</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adminForm" action="create_admin.php" method="post" class="row gy-3 needs-validation" novalidate>
+                        <div class="my-1">
+                            <div class="position-relative">
+                                <i class="bi bi-person-lines-fill fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <input class="form-control form-control-lg ps-5" type="text" placeholder="Username" required name="username" id="username">
+                            </div>
+                        </div>
+                        <div class="col-12 my-1">
+                            <div class="position-relative">
+                                <i class="bi bi-shield-lock fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <div class="password-toggle">
+                                    <input id="newPassword" class="form-control form-control-lg ps-5" type="password" placeholder="Password" required name="uPassword">
+                                    <i class="bi bi-eye-slash fs-lg position-absolute password-toggle-btn" id="toggle-new-password"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 my-1">
+                            <div class="position-relative">
+                                <i class="bi bi-shield-lock fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <div class="password-toggle">
+                                    <input id="confirmPassword" class="form-control form-control-lg ps-5" type="password" placeholder="Confirm Password" required name="cPassword">
+                                    <i class="bi bi-eye-slash fs-lg position-absolute password-toggle-btn" id="toggle-confirm-password"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="position-relative">
+                                <button class="btn btn-primary w-100  me-auto" type="submit">CREATE &nbsp;
+                                    ADMINISTRATOR
+                                    &nbsp; ACCCOUNT</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
