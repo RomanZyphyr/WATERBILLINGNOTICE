@@ -100,6 +100,67 @@ $conn->close();
                     </ul>
                 </div>
 
+                <div class="card-body text-bg-secondary m-1">
+                    <div class="tab-content" id="myTabContent">
+
+                        <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <h5 class="card-title">Customer Background</h5>
+                            <form action="update_customer.php" method="post"> <!-- Ensure this points to your update script -->
+                                <div class="mb-3">
+                                    <label for="fullname" class="form-label ms-5">Full Name</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                        <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo htmlspecialchars($customer_name); ?>" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label ms-5">Address</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+                                        <input type="text" class="form-control" id="address" name="address" value="<?php echo htmlspecialchars($customer_address); ?>" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label ms-5">Phone Number</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                                        <input type="text" class="form-control" id="phone" name="phone" value="<?php echo htmlspecialchars($customer_phone); ?>" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label ms-5">Email</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                        <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($customer_email); ?>" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label ms-5">Username</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                                        <input type="text" class="form-control" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" required>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="password" class="form-label ms-5">Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                        <input id="password" name="password" class="form-control" type="password" placeholder="Password" value="<?php echo htmlspecialchars($password); ?>" required>
+                                        <span class="input-group-text">
+                                            <i class="bi bi-eye-slash" id="toggle-password" style="cursor: pointer;"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-start ms-3">
+                                    <button type="submit" class="btn btn-primary btn-lg ms-4">UPDATE</button>
+                                </div>
+                            </form>
+                        </div>
+
+                   
+
+                    </div>
+                </div>
             </div>
         </div>
 
