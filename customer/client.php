@@ -157,7 +157,40 @@ $conn->close();
                             </form>
                         </div>
 
-                   
+                        <div class="tab-pane fade" id="check-bills" role="tabpanel" aria-labelledby="check-bills-tab">
+                            <h5 class="card-title">Check Bills</h5>
+                            <form id="dlbillform" action="" method="post">
+                                <div class="mb-3">
+                                    <label for="bill-id" class="form-label">Bill ID</label>
+                                    <input type="text" class="form-control" id="bill-id" value="" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="meter-id" class="form-label">Meter ID</label>
+                                    <input type="text" class="form-control" id="meter-id" value="" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="billing-date-from" class="form-label">Billing Date From</label>
+                                    <input type="text" class="form-control" id="billing-date-from" value="" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="billing-date-to" class="form-label">Billing Date To</label>
+                                    <input type="text" class="form-control" id="billing-date-to" value="" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="water-consumption" class="form-label">Water Consumption</label>
+                                    <input type="text" class="form-control" id="water-consumption" value="" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="billing-amount" class="form-label">Billing Amount</label>
+                                    <input type="text" class="form-control" id="billing-amount" value="" readonly>
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="button" id="dlbill" class="btn btn-primary btn-end">Download Bill</button>
+                                </div>
+                            </form>
+                        </div>
+
+                      
 
                     </div>
                 </div>
