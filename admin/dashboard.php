@@ -708,7 +708,19 @@
                                         </tr>
                                     </thead>
                                     <tbody id="customerTableBody">
-                                    
+                                        <script>
+                                            function sortCustomers(status) {
+                                                const xhr = new XMLHttpRequest();
+                                                xhr.open("POST", "customer_tab.php", true);
+                                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                                xhr.onreadystatechange = function() {
+                                                    if (xhr.readyState === 4 && xhr.status === 200) {
+                                                        document.getElementById('customerTableBody').innerHTML = xhr.responseText;
+                                                    }
+                                                };
+                                                xhr.send("status=" + status);
+                                            }
+                                        </script>
 
                                         <!-- Data will be populated here via JavaScript -->
                                     </tbody>
