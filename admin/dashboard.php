@@ -1426,6 +1426,145 @@
         });
     </script>
 
+<script>
+        $(document).ready(function() {
+            $("#changePasswordForm").on("submit", function(e) {
+                e.preventDefault();
+
+                // Client-side form validation
+                var username = $("#username").val();
+                var currentPassword = $("#currentPassword").val();
+                var newPassword = $("#newsPassword").val();
+                var confirmPassword = $("#confirmsPasswords").val();
+
+                if (!username || !currentPassword || !newPassword || !confirmPassword) {
+                    $("#changePasswordModal .error-message2").text("All fields are required.");
+                    return;
+                }
+
+                if (newPassword.length < 8) {
+                    $("#changePasswordModal .error-message2").text("New password must be at least 8 characters long.");
+                    return;
+                }
+
+                if (newPassword !== confirmPassword) {
+                    $("#changePasswordModal .error-message2").text("New password and confirm password do not match.");
+                    return;
+                }
+
+                $.ajax({
+                    url: "changePass.php",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        var responseData = JSON.parse(response);
+                        if (responseData.success) {
+                            $("#changePasswordForm")[0].reset(); // Reset the form fields
+                            $("#changePasswordModal .error-message2").text(""); // Clear any existing error messages
+                            alert(responseData.message); // Optionally display a success message
+                        } else {
+                            $("#changePasswordModal .error-message2").text(responseData.message); // Display error message in the modal
+                        }
+                    },
+                    error: function() {
+                        $("#changePasswordModal .error-message2").text("An error occurred. Please try again.");
+                    }
+                });
+            });
+
+            // Clear form fields and error message when the modal is closed
+            $("#changePasswordModal").on("hidden.bs.modal", function() {
+                $("#changePasswordForm")[0].reset();
+                $("#changePasswordModal .error-message2").text("");
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#statusload').click(function() {
+                $.ajax({
+                    url: 'fetch_outstanding_bills.php',
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        var tbody = '';
+                        data.forEach(function(bill, index) {
+                            tbody += '<tr>' +
+                                '<th scope="row">' + (index + 1) + '</th>' +
+                                '<td>' + bill.customer_id + '</td>' +
+                                '<td>' + bill.bill_id + '</td>' +
+                                '<td>' + bill.bill_period_begin + ' - ' + bill.bill_period_end + '</td>' +
+                                '<td>' + bill.bill_amount + '</td>' +
+                                '<td>' + bill.pay_status + '</td>' +
+                                '</tr>';
+                        });
+                        $('tbody').html(tbody);
+                    }
+                });
+            });
+
+            $('#paybtn').click(function() {
+                var bill_id = $('#paymentsearch').val();
+                if (bill_id) {
+                    // Check if the bill is outstanding
+                    $.ajax({
+                        url: 'check_bill_status.php',
+                        method: 'POST',
+                        data: {
+                            bill_id: bill_id
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.status === 'outstanding') {
+                                // Show the confirmation modal if the status is outstanding
+                                $('#confirmPaymentModal').data('bill-id', bill_id).modal('show');
+                            } else {
+                                $('#messageModalBody1').text('The bill status is not outstanding.');
+                                $('#messageModal1').modal('show');
+                            }
+                        },
+                        error: function() {
+                            $('#messageModalBody1').text('An error occurred while checking bill status.');
+                            $('#messageModal1').modal('show');
+                        }
+                    });
+                } else {
+                    $('#messageModalBody1').text('Please enter a valid BILL ID.');
+                    $('#messageModal1').modal('show');
+                }
+            });
+
+            $('#confirmPaymentButton').click(function() {
+                var bill_id = $('#confirmPaymentModal').data('bill-id');
+                $.ajax({
+                    url: 'update_bill_status.php',
+                    method: 'POST',
+                    data: {
+                        bill_id: bill_id
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        $('#confirmPaymentModal').modal('hide');
+                        $('#messageModalBody1').text(response.message);
+                        $('#messageModal1').modal('show');
+                    },
+                    error: function() {
+                        $('#confirmPaymentModal').modal('hide');
+                        $('#messageModalBody1').text('An error occurred while updating payment status.');
+                        $('#messageModal1').modal('show');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+    <!-- database -->
+
+
 
 </body>
 
