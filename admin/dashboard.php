@@ -665,6 +665,62 @@
         </div>
     </div>
 
+    <div class="main-content d-none" id="customers">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row justify-content-between ">
+                                <div class="col-md-4 col-12 ">
+                                    <h5 class="card-title">Customers Background</h5>
+                                </div>
+                                <div class="col-md-4 col-4 text-end">
+                                    <div class="dropdown">
+                                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            SORT BY
+                                        </button>
+                                        <ul class="dropdown-menu  dropdown-menu-dark dropdown-menu-sm-end">
+                                            <li><a class="dropdown-item text-info" href="#" onclick="sortCustomers('ACTIVE')">ACTIVE</a></li>
+                                            <li><a class="dropdown-item text-info" href="#" onclick="sortCustomers('INACTIVE')">INACTIVE</a></li>
+                                            <li><a class="dropdown-item text-info" href="#" onclick="sortCustomers('OUT OF SERVICE')">OUT OF SERVICE</a>
+                                            </li>
+                                            <li>
+                                                <hr class="dropdown-divider m-0">
+                                            </li>
+                                            <li><a class="dropdown-item" href="#" onclick="sortCustomers('refresh')">REFRESH</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="table-responsive-md">
+                                <table class="table table-striped table-hover table-bordered border-info">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Customer_ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Status</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody id="customerTableBody">
+                                    
+
+                                        <!-- Data will be populated here via JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
