@@ -263,7 +263,20 @@
                             </div>
                         </div>
                     </div>
-                   
+                    <div class="card mb-2">
+                        <div class="card-body p-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-info">Pending Payments</h6>
+                                    <div class="stat" id="total-outstanding">Loading...</div>
+                                    <div class="percentage fs-4 text-danger" id="latest-due-date">Loading...</div>
+                                </div>
+                                <div class="icon">
+                                    <i class="bi bi-cash-coin"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
