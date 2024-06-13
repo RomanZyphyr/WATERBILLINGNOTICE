@@ -285,6 +285,53 @@
         </div>
     </section>
 
+    <!-- <div id="aboutus" class="p-5"></div> -->
+    <!-- ABOUT US SECTION -->
+    <section class="secondbg " id="aboutus">
+        <div class="container py-4 ">
+            <header class="pb-3 mb-4 border-bottom text-center">
+                <a href="#" class="d-flex justify-content-center text-body-emphasis text-decoration-none">
+                    <span class="fs-4 text-light fw-bolder">About Us</span>
+                </a>
+            </header>
+
+            <div class="p-3 mb-4 bg-body-tertiary rounded-3">
+                <div class="container-fluid py-3">
+                    <h1 class="display-5 fw-bold">Introduction</h1>
+                    <p class="col-md-12 fs-3 text-justify lead">
+                        We are dedicated to revolutionizing the way consumers receive and manage their water bills. Our mission is
+                        to provide a convenient, accessible, and environmentally friendly solution that replaces traditional
+                        paper-based billing with a seamless online system.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6 mb-3">
+                    <div class="h-100 p-4  text-bg-dark rounded-3">
+                        <h2>Our Services</h2>
+                        <p class="lead text-justify">Our platform allows users to easily access their monthly water bills online by
+                            simply entering their account ID. This service ensures timely updates, detailed billing information, and
+                            eliminates the need for paper-based bills, contributing to environmental sustainability.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="h-100 p-4 bg-body-tertiary border rounded-3">
+                        <h2 class="fs-4 fw-bolder">Community and Sustainability</h2>
+                        <p class="lead text-justify fw-normal">
+                            We are passionate about reducing our environmental footprint. By transitioning to online billing, we save
+                            thousands of trees annually and reduce waste. Moreover, we actively participate in community initiatives
+                            aimed at promoting water conservation and sustainability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
 
 
 
