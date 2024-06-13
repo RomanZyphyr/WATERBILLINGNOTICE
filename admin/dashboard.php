@@ -123,6 +123,79 @@
         </div>
     </div>
 
+    <!-- Modal for Changing Password -->
+    <div class="modal fade" id="changePasswordModal" aria-hidden="true" aria-labelledby="changePasswordTitle" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="changePasswordTitle">Change Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="ms-3 error-message2 text-info"></div>
+                <div class="modal-body">
+                    <form id="changePasswordForm" action="" method="post" class="row gy-3 needs-validation" novalidate>
+                        <div class="my-1">
+                            <div class="position-relative">
+                                <i class="bi bi-person-lines-fill fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <input class="form-control form-control-lg ps-5" type="text" placeholder="Username" required name="username" id="username">
+                            </div>
+                        </div>
+                        <div class="col-md-12 my-1">
+                            <div class="position-relative">
+                                <i class="bi bi-lock-fill fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <div class="password-toggle">
+                                    <input id="currentPassword" class="form-control form-control-lg ps-5" type="password" placeholder="Current Password" required name="currentPassword">
+                                    <i class="bi bi-eye-slash fs-lg position-absolute password-toggle-btn" id="toggle-current-password"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 my-1">
+                            <div class="position-relative">
+                                <i class="bi bi-lock-fill fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <div class="password-toggle">
+                                    <input id="newsPassword" class="form-control form-control-lg ps-5" type="password" placeholder="New Password" required name="newPassword">
+                                    <i class="bi bi-eye-slash fs-lg position-absolute password-toggle-btn" id="toggle-news-password"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 my-1">
+                            <div class="position-relative">
+                                <i class="bi bi-lock-fill fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <div class="password-toggle">
+                                    <input id="confirmsPasswords" class="form-control form-control-lg ps-5" type="password" placeholder="Confirm New Password" required name="confirmPassword">
+                                    <i class="bi bi-eye-slash fs-lg position-absolute password-toggle-btn" id="toggle-confirms-passwords"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="position-relative">
+                                <button class="btn btn-primary w-100 me-auto" type="submit">Change Password</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Small modal for displaying messages -->
+    <div class="modal fade" id="messageModal2" tabindex="-1" aria-labelledby="messageModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content notif" id="sidespopup">
+                <div class="modal-header">
+                    <h5 class="modal-title text-info fs-3" id="messageModalLabel2">Notification</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-info fs-5" id="messageModalBody2">
+                        <!-- Message will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
