@@ -215,6 +215,78 @@
     </header>
 
 
+    <section class="thirdbg">
+        <div class="container marketing">
+            <!-- START THE FEATURETTES -->
+            <!-- <hr class="featurette-divider"> -->
+            <div class="row featurette pt-4" id="rateup">
+                <div class="col-md-6">
+                    <h2 class="featurette-heading fw-normal lh-1  align-middle">"New Rates, Better Service: <span class="text-body-secondary">Stay Updated on Your Water Costs!"</span></h2>
+                    <p class="lead text-justify"> Learn about the latest adjustments to water rates for both residential and
+                        commercial consumers. Understand how these changes impact your monthly bill and the reasons behind them.
+                    </p>
+                </div>
+
+                <div class="col-md-6 mt-md-5 ">
+                    <div class="card bg-dark text-light feats">
+                        <div class="card-body ">
+                            <h5 class="card-title">Water Cubic Rates</h5>
+                            <div class="mb-3">
+                                <label for="yearSelect" class="form-label">Select Year</label>
+                                <select id="yearSelect" class="form-select">
+                                    <option value="2006">2006</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                            </div>
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- NEWS SECTION -->
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-4 order-md-2">
+                    <h2 class="featurette-heading fw-bold lh-1">Save Water<span class="text-body-secondary">, Save Money, Save the
+                            Planet!</span></h2>
+                    <p class="lead text-justify">Discover practical and easy-to-implement tips to reduce your water usage, lower
+                        your bills, and contribute to a sustainable future. Our water conservation tips are designed to help you
+                        make a big impact with small changes in your daily routine.
+
+                    </p>
+                </div>
+                <div class="col-md-8 order-md-1 watersaving">
+                    <video controls>
+                        <source src="IMAGES/watersaving.mp4" type="video/mp4">
+
+                    </video>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="container">
+                <!-- Check if there is any content -->
+                <div id="notification-content" class="row featurette pb-4">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+
+                <!-- No posts message -->
+                <div id="no-posts-message" class="no-posts">
+                    No posts available.
+                </div>
+            </div>
+            <!-- /END THE FEATURETTES -->
+        </div>
+    </section>
+
+
+
 
 
 
