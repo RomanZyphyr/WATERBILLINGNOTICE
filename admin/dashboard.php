@@ -364,7 +364,79 @@
                     </div>
                 </div>
             </div>
-           
+            <!-- Customer Information Modal -->
+            <div class="modal fade" id="createpart2" aria-hidden="true" aria-labelledby="createpart2two" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content text-dark">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-info" id="createpart2two">Customer Information</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Error message placeholder -->
+                            <div class="error-message text-danger"></div>
+                            <form id="customerInfoForm" class="row gy-3 needs-validation pt-2" novalidate>
+                                <div class="col-md-8 my-1">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" id="validationCustom01" name="customer_name" placeholder="Fullname" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 my-1">
+                                    <div class="position-relative">
+                                        <input type="number" class="form-control" id="validationCustom02" name="customer_phone" placeholder="Phone" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" id="validationCustom03" name="customer_address" placeholder="Address" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <input type="email" class="form-control" id="validationCustom04" name="customer_email" placeholder="Email" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="my-1">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" id="validationCustom05" name="meter_install_address" placeholder="Installation Address" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <select class="form-select" id="validationCustom06" name="meter_type" required>
+                                            <option selected disabled value="">Meter Type</option>
+                                            <option value="residential">Residential</option>
+                                            <option value="commercial">Commercial</option>
+                                        </select>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <select class="form-select" id="validationCustom07" name="meter_location" required>
+                                            <option selected disabled value="">Meter Location</option>
+                                            <option value="indoor">Indoor</option>
+                                            <option value="outdoor">Outdoor</option>
+                                        </select>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="position-relative">
+                                        <button class="btn btn-primary w-100 me-auto" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
 
         </div>
     </div>
