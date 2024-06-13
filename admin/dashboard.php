@@ -282,6 +282,55 @@
         </div>
     </div>
 
+    <div class="main-content d-none" id="dashboard">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-12 ">
+                    <div class="card mt-md-0">
+                        <div class="card-body ">
+                            <h5 class="card-title ">Dashboard</h5>
+                            <hr>
+                            <div class="container p-md-4">
+
+                                <div class="row mb-md-4 ">
+                                    <div class="d-grid col-12  col-md-4 mb-md-0 mb-1">
+                                        <button type="button" class="btn btn-secondary hover-button p-md-5" data-bs-toggle="modal" data-bs-target="#createpart1">CREATE
+                                            ACCOUNTS</button>
+                                    </div>
+                                    <div class="d-grid col-12 col-md-4 mb-md-0 mb-1 ">
+                                        <button class="btn btn-secondary hover-button p-md-5" data-bs-toggle="modal" data-bs-target="#genebills">GENERATE
+                                            BILLS</button>
+                                    </div>
+                                    <div class="d-grid col-12 col-md-4 mb-md-0 mb-1">
+                                        <button class="btn btn-secondary hover-button p-md-5" data-bs-toggle="modal" data-bs-target="#updateRateModal">UPDATE WATER
+                                            RATES</button>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class=" d-grid col-12 col-md-6 mb-md-0 mb-1 ">
+                                        <button class="btn btn-secondary hover-button  p-md-5 " data-bs-toggle="modal" data-bs-target="#postAnnouncementModal">POST
+                                            ANNOUNCEMENTS</button>
+                                    </div>
+                                    <div class="d-grid col-12 col-md-6 mb-md-0  mb-1">
+                                        <button class="btn btn-secondary hover-button  p-md-5" data-bs-toggle="modal" data-bs-target="#updatecustomer">UPDATE CUSTOMER
+                                            ACCOUNTS</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
