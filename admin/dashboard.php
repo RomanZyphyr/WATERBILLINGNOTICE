@@ -326,6 +326,44 @@
                 </div>
             </div>
 
+            <!-- Create Account Modal Structure -->
+            <div class="modal fade" id="createpart1" tabindex="-1" aria-labelledby="createpart1one" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered text-dark">
+                    <div class="modal-content p-3">
+                        <div class="modal-header border-0" data-bs-theme="dark">
+                            <h5 class="modal-title fs-3 fw-bold text-info" id="createpart1one">Creating Customer
+                                Account
+                            </h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Error message placeholder -->
+                            <div class="error-message text-danger"></div>
+                            <form id="createAccountForm" class="row gy-0 needs-validation" novalidate>
+                                <hr>
+                                <div class="my-1">
+                                    <div class="position-relative">
+                                        <i class="bi bi-person-badge-fill fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                        <input class="form-control form-control-lg ps-5" type="text" placeholder="Username" required name="username" id="username">
+                                    </div>
+                                </div>
+                                <div class="my-1">
+                                    <div class="position-relative">
+                                        <i class="bi bi-lock-fill fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                        <div class="password-toggle">
+                                            <input id="Cpassword" class="form-control form-control-lg ps-5" type="password" placeholder="Password" required name="upassword">
+                                            <i class="bi bi-eye-slash fs-lg position-absolute password-toggle-btn" id="toggle-password"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <button type="submit" class="btn btn-lg btn-primary" id="createAccountButton">CREATE</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
            
 
         </div>
