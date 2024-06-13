@@ -733,6 +733,94 @@
         </div>
     </div>
 
+    <div class="main-content d-none" id="payments">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body ">
+                            <div class="row justify-content-between mb-1">
+                                <div class="col-md-4 col-12">
+                                    <h5 class="card-title">Payment Management</h5>
+                                </div>
+                                <div class="col-md-4 col-4 text-end">
+                                    <button type="button" id="statusload" class="btn btn-info btn-sm">REFRESH</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="my-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="paymentsearch" name="bill_id" placeholder="Search BILL ID" required>
+                                    <button class="btn btn-outline-primary" type="button" id="paybtn">PAYMENT</button>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                            </div>
+                            <div class="table-responsive-md">
+                                <table class="table table-striped table-hover table-bordered border-info">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Customer_ID</th>
+                                            <th scope="col">Bill_ID</th>
+                                            <th scope="col">Period_Covered</th>
+                                            <th scope="col">Amount</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Table rows will be inserted here by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Confirm Payment Modal -->
+                            <div class="modal fade" id="confirmPaymentModal" tabindex="-1" aria-labelledby="confirmPaymentModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content notif">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-info fs-5" id="confirmPaymentModalLabel">
+                                                Confirm
+                                                Payment</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-info fs-6">
+                                            Are you sure you want to mark this bill as paid?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" id="confirmPaymentButton" class="btn btn-primary">Yes,
+                                                Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message Modal -->
+                            <div class="modal fade" id="messageModal1" tabindex="-1" aria-labelledby="messageModalLabel1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content notif">
+                                        <div class="modal-header ">
+                                            <h5 class="modal-title text-info" id="messageModalLabel1">Notification
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="text-info fs-5" id="messageModalBody1">
+                                            </div>
+                                            <!-- Message will be inserted here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
