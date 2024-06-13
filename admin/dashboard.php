@@ -524,7 +524,50 @@
                 </div>
             </div>
 
-           
+            <!-- Modal for Posting Announcements -->
+            <div class="modal fade" id="postAnnouncementModal" aria-hidden="true" aria-labelledby="postAnnouncementTitle" tabindex="-1">
+                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content text-dark">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-info" id="postAnnouncementTitle">Post Announcement</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-info">
+                            <form id="announcementForm" class="row gy-3 needs-validation" novalidate>
+                                <div class="col-md-12 my-2">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" id="affectedArea" placeholder="Enter affected area" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <label for="announcementDate" class="form-label fs-4">Date</label>
+                                        <input type="date" class="form-control" id="announcementDate" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="position-relative">
+                                        <label for="announcementTime" class="form-label fs-4">Time</label>
+                                        <input type="time" class="form-control" id="announcementTime" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="position-relative">
+                                        <button class="btn btn-primary w-100 me-auto" type="submit">Post
+                                            Announcement</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        
 
         </div>
     </div>
