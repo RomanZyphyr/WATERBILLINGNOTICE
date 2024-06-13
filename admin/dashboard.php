@@ -234,7 +234,23 @@
                             </div>
                         </div>
                     </div>
-                   
+                    <div class="card mb-2">
+                        <div class="card-body p-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-info">Monthly Water Rates</h6>
+                                    <div class="stat" id="current-residential-rate">Loading...</div>
+                                    <div class="percentage text-success" id="previous-residential-rate">Loading...</div>
+                                    <div class="stat" id="current-commercial-rate">Loading...</div>
+                                    <div class="percentage text-success" id="previous-commercial-rate">Loading...</div>
+                                </div>
+                                <div class="icon">
+                                    <i class="bi bi-currency-exchange"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
