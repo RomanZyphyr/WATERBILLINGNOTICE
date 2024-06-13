@@ -195,6 +195,33 @@
         </div>
     </div>
 
+    <div class="main-content" id="home">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7 mb-md-0 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">WATER RATES STATISTICS</h5>
+                            <div class="mb-3">
+                                <label for="yearSelect" class="form-label">Select Year</label>
+                                <select id="yearSelect" class="form-select">
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024" selected>2024</option>
+
+                                </select>
+                            </div>
+                            <canvas id="salesChart" height="210"></canvas>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
