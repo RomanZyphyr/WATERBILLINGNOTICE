@@ -333,6 +333,56 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class=" footer text-center text-lg-start   footer-light footbg ">
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <div class=" d-none d-lg-block">
+                <span>Connect with us on social networks:</span>
+            </div>
+            <div class="">
+                <a href="#" class="me-md-4 mx-3 text-reset link-info"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-md-4 mx-3 text-reset link-info"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="me-md-4 mx-3 text-reset link-info"><i class="bi bi-google"></i></a>
+                <a href="#" class="me-md-4 mx-3 text-reset link-info"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="me-md-4 mx-3 text-reset link-info"><i class="bi bi-github"></i></a>
+            </div>
+        </section>
+
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">AquaE-Bill</h6>
+                        <p>Experience the future of water billing with AquaE-Bill. Simplifying your water billing process while
+                            promoting sustainability.</p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Services</h6>
+                        <p><a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#loginModal">Billing</a></p>
+                        <p><a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#loginModal">Notifications</a></p>
+                        <p><a href="#" class="text-reset">News</a></p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                        <p><a href="#" class="text-reset">Price Rates</a></p>
+                        <p><a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#loginModal">Settings</a></p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i>Town-Center, Oroquieta</p>
+                        <p><i class="fas fa-home me-3"></i>City, Misamis Occidental</p>
+                        <p><i class="fas fa-envelope me-3"></i>bac.ocwd@gmail.com</p>
+                        <p><i class="fas fa-phone me-3"></i> +63 9123456789</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 AquaE-Bill. All rights reserved.
+        </div>
+    </footer>
 
 
 
