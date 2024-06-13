@@ -1127,6 +1127,305 @@
         });
     </script>
 
+<script>
+        $(document).ready(function() {
+            // Clear form fields when a modal is closed
+            $(".modal").on("hidden.bs.modal", function() {
+                $(this).find("input").val(""); // Clear input fields
+                $(this).find("select").prop('selectedIndex', 0); // Reset select fields
+                $(this).find(".error-message").text(""); // Clear error messages
+            });
+
+            // Form submission for creating account
+            $("#createAccountForm").on("submit", function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "../admin/create_account.php",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        var responseData = JSON.parse(response);
+                        if (responseData.success) {
+                            $("#createpart1").modal("hide");
+                            $("#createpart2").modal("show");
+                        } else {
+                            // Display error message in the modal
+                            $("#createpart1 .error-message").text(responseData.message);
+                        }
+                    },
+                    error: function() {
+                        $("#createpart1 .error-message").text("An error occurred while creating the account.");
+                    }
+                });
+            });
+
+            // Form submission for submitting customer info
+            $("#customerInfoForm").on("submit", function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "../admin/submit_customer_info.php",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        var responseData = JSON.parse(response);
+                        if (responseData.success) {
+                            // Show success message modal
+                            $('#messageModalBody').html(responseData.message);
+                            $('#messageModal').modal('show');
+                            $("#createpart2").modal("hide");
+                        } else {
+                            // Display error message in the modal
+                            $("#createpart2 .error-message").text(responseData.message);
+                        }
+                    },
+                    error: function() {
+                        $("#createpart2 .error-message").text("An error occurred while submitting customer information.");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#billingForm').submit(function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Serialize form data
+                var formData = $(this).serialize();
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    method: $(this).attr('method'),
+                    data: formData,
+                    dataType: 'json', // Expect JSON response
+                    success: function(response) {
+                        // Update the message modal with the response message
+                        $('#messageModalBody').html(response.message);
+                        // Show the message modal
+                        $('#messageModal').modal('show');
+                        if (response.status === 'success') {
+                            $('#billingForm')[0].reset(); // Reset the form only on success
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors here if necessary
+                        console.error(xhr.responseText);
+                        $('#messageModalBody').html("An error occurred. Please try again.");
+                        $('#messageModal').modal('show');
+                    }
+                });
+            });
+
+            // Existing code for fetching customer data
+            $('#searchButton').click(function() {
+                var customer_id = $('#searchCustomerMeterID').val();
+                if (customer_id != '') {
+                    $.ajax({
+                        url: "fetch_customer.php",
+                        method: "POST",
+                        data: {
+                            customer_id: customer_id
+                        },
+                        dataType: 'json', // Expect JSON response
+                        success: function(response) {
+                            if (response.customer_name && response.meter_id) {
+                                $('#ConsumerName').val(response.customer_name);
+                                $('#MeterID').val(response.meter_id);
+                            } else if (response.message) {
+                                $('#messageModalBody').html(response.message);
+                                $('#messageModal').modal('show');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                            $('#messageModalBody').html("An error occurred while fetching customer data. Please try again.");
+                            $('#messageModal').modal('show');
+                        }
+                    });
+                } else {
+                    $('#messageModalBody').html("Please enter a Customer ID.");
+                    $('#messageModal').modal('show');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Form submission for updating rate information
+            $("#updateRateModalForm").on("submit", function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: "POST",
+                    data: $(this).serialize(),
+                    dataType: 'json', // Expect JSON response
+                    success: function(response) {
+                        if (response.success) {
+                            $('#updateRateModal').modal('hide');
+                            $('#messageModalBody').text(response.message);
+                            $('#messageModal').modal('show');
+                        } else {
+                            $('#messageModalBody').text(response.message);
+                            $('#messageModal').modal('show');
+                        }
+                    },
+                    error: function() {
+                        $('#messageModalBody').text('An error occurred while updating rate information.');
+                        $('#messageModal').modal('show');
+                    }
+                });
+            });
+
+            // Clear form fields and messages when the modal is closed
+            $("#updateRateModal").on("hidden.bs.modal", function() {
+                $(this).find("input").val(""); // Clear input fields
+                $(this).find("select").prop('selectedIndex', 0); // Reset select fields
+            });
+
+            // Clear the message modal body when it is closed
+            $("#messageModal").on("hidden.bs.modal", function() {
+                $('#messageModalBody').text('');
+            });
+        });
+    </script>
+
+<script>
+        //  update accounts
+
+        $(document).ready(function() {
+            $('#searchButtonUpdate').click(function() {
+                var customer_id = $('#searchUpdateCustomerID').val();
+                if (customer_id != '') {
+                    $.ajax({
+                        url: "get_customer_info.php",
+                        method: "POST",
+                        data: {
+                            customer_id: customer_id
+                        },
+                        success: function(data) {
+                            var result = JSON.parse(data);
+                            if (result.message) {
+                                $('#messageModalBody').text(result.message);
+                                $('#messageModal').modal('show');
+                            } else {
+                                $('#Updateusername').val(result.username);
+                                $('#Updatepassword').val(''); // Leave password field blank
+                                $('#Updatename').val(result.customer_name);
+                                $('#Updatephone').val(result.customer_phone);
+                                $('#Updateaddress').val(result.customer_address);
+                                $('#Updateemail').val(result.customer_email);
+                                $('#cstatus').val(result.customer_status);
+                            }
+                        }
+                    });
+                }
+            });
+
+            $('#customerInfoFormUpdate').submit(function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Serialize form data
+                var formData = $(this).serialize();
+
+                $.ajax({
+                    url: "update_customer_info.php",
+                    method: "POST",
+                    data: formData,
+                    dataType: 'json', // Expect JSON response
+                    success: function(response) {
+                        $('#messageModalBody').text(response.message);
+                        $('#messageModal').modal('show');
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors here if necessary
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('announcementForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var affectedArea = document.getElementById('affectedArea').value;
+            var announcementDate = document.getElementById('announcementDate').value;
+            var announcementTime = document.getElementById('announcementTime').value;
+
+            var formData = new FormData();
+            formData.append('affected_area', affectedArea);
+            formData.append('announcement_date', announcementDate);
+            formData.append('announcement_time', announcementTime);
+
+            fetch('post_announcement.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('messageModalBody').innerText = data.message;
+                    var messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
+                    messageModal.show();
+
+                    if (data.status === 'success') {
+                        // Optionally, clear the form
+                        document.getElementById('announcementForm').reset();
+                        // Close the post announcement modal
+                        var postModal = bootstrap.Modal.getInstance(document.getElementById('postAnnouncementModal'));
+                        postModal.hide();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('messageModalBody').innerText = 'An error occurred. Please try again.';
+                    var messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
+                    messageModal.show();
+                });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#adminForm").on("submit", function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: "create_admin.php",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        var responseData = JSON.parse(response);
+                        if (responseData.success) {
+                            $("#adminForm")[0].reset(); // Reset the form fields
+                            showMessage(responseData.success, "success");
+                        } else {
+                            showMessage(responseData.error, "error");
+                        }
+                    },
+                    error: function() {
+                        showMessage("An error occurred. Please try again.", "error");
+                    }
+                });
+            });
+
+            // Function to show messages
+            function showMessage(message, type) {
+                var messageModalBody2 = $("#messageModalBody2");
+                if (type === "success") {
+                    messageModalBody2.removeClass("text-danger").addClass("text-success");
+                } else {
+                    messageModalBody2.removeClass("text-success").addClass("text-danger");
+                }
+                messageModalBody2.text(message);
+                $("#messageModal2").modal("show");
+            }
+        });
+    </script>
+
 
 </body>
 
