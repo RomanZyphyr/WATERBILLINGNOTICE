@@ -217,7 +217,25 @@
                         </div>
                     </div>
                 </div>
-              
+                <div class="col-md-5">
+                    <div class="card mb-2">
+                        <div class="card-body p-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-info">Monthly Water Consumption</h6>
+                                    <div class="stat text-wrap">
+                                        <div class="current-consumption">Loading...</div> (per cubic meter)
+                                    </div>
+                                    <div class="percentage text-success">Previous Month: <span class="previous-consumption">Loading...</span></div>
+                                </div>
+                                <div class="icon">
+                                    <i class="bi bi-droplet-half"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
             </div>
         </div>
     </div>
