@@ -250,7 +250,20 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="card mb-2">
+                        <div class="card-body p-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-info">Total Customers</h6>
+                                    <div class="stat" id="total-customers">Loading...</div>
+                                </div>
+                                <div class="icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
                 </div>
             </div>
         </div>
