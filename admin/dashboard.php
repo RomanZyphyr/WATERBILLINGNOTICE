@@ -436,7 +436,95 @@
                     </div>
                 </div>
             </div>
-         
+            <!-- Main billing modal -->
+            <div class="modal fade" id="genebills" aria-hidden="true" aria-labelledby="generateBL" tabindex="-1">
+                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content text-dark">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 text-info" id="createpart2Title">Customer Billing
+                                Information
+                            </h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="billingForm" method="post" action="process_billing.php" class="row gy-3 needs-validation" novalidate>
+                                <div class="my-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="searchCustomerMeterID" name="customer_id" placeholder="Search Customer ID" required>
+                                        <button class="btn btn-outline-primary" type="button" id="searchButton">Search</button>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-1">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control" id="ConsumerName" name="consumer_name" placeholder="Consumer Name" readonly>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-1">
+                                    <div class="position-relative">
+                                        <input type="hidden" name="meter_id" id="MeterID">
+                                        <input type="number" class="form-control" id="waterConsumptionID" name="consumption" placeholder="Water Consumption (cubic meters)" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="position-relative">
+                                        <button class="btn btn-primary w-100 me-auto" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for Updating Rate Information -->
+            <div class="modal fade" id="updateRateModal" aria-hidden="true" aria-labelledby="updateRateTitle" tabindex="-1">
+                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content text-info">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="updateRateTitle">Update Rate Information</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="updateRateModalForm" action="update_rate.php" method="post" class="row gy-3 needs-validation" novalidate>
+                                <hr>
+                                <div class="col-12 my-1">
+                                    <div class="position-relative">
+                                        <select class="form-select" id="rateType" name="rates_type" required>
+                                            <option selected disabled value="">Rate Type</option>
+                                            <option value="residential">Residential</option>
+                                            <option value="commercial">Commercial</option>
+                                        </select>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-1">
+                                    <div class="position-relative">
+                                        <input type="number" step="0.01" class="form-control" id="ratePerCubicMeter" name="rates_per_cubic" placeholder="Rate per Cubic Meter ($)" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-1">
+                                    <div class="position-relative">
+                                        <label for="effectiveDate" class="form-label fs-4">Effective Date</label>
+                                        <input type="date" class="form-control" id="effectiveDate" name="effective_date" required>
+                                        <div class="valid-feedback">Looks good!</div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <div class="position-relative">
+                                        <button class="btn btn-primary w-100 me-auto" type="submit">Update</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
 
         </div>
     </div>
